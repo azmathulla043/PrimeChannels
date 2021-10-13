@@ -15,16 +15,16 @@ class ChannelRepository @Inject
 constructor(private val apiService: ApiService) {
 
     suspend fun getChannelData(): List<Channels> {
-        return apiService.getProgramChannel()
+        return apiService.getProgramChannel(3)
     }
 
     suspend fun getRecordingResponse(): List<BookRecording> {
-        return apiService.bookRecording()
+        return apiService.bookRecording(3456)
     }
 
 
     suspend fun getCancelResposnse(): List<CancelResponse> {
-        return apiService.cancelResponse()
+        return apiService.cancelResponse(3, 1234)
     }
 
 
